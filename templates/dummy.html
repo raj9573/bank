@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>Home page</title>
+    {% endblock %}
+    <style>
+       .nav-link{
+        color:white;
+        padding: 10px;
+        }
+        nav{
+            padding: 10px;
+            background-color: red;
+            margin-top:12px;
+            width: fit-content;
+            border-top-left-radius:0px;
+            border-end-start-radius: 10px;
+            border-top-right-radius:10px;
+        }
+        body
+        {
+            background-color:brown;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <center>
+      
+    <nav>
+       
+        <a href="{% url 'User_form' %}" class="nav-link">Home and regsitration</a>
+        <a href=""  class="nav-link">About Bank</a>
+        {% if user.is_authenticate %}
+        <a href=""  class="nav-link" >Make transactions</a>
+        <a href=""  class="nav-link">History</a>
+        {% endif %}
+    </nav>
+    {% if username %}
+    <h1>Welcome to the Website {{username}}</h1>
+    {% else %}
+    <h1>Welcome to the website</h1>
+    {% endif %}
+</center>
+
+{% block body_block %}
+
+{% endblock %}
+</body>
+</html>

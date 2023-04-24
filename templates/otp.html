@@ -1,0 +1,23 @@
+{% extends 'dummy.html' %}
+
+
+{% block title %}
+<title>Otp Page</title>
+{% endblock %}
+
+
+{% block body_block %}
+ 
+<h1>Enter valid otp to Register</h1>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label for="otp">Enter Otp</label>
+    <input type="number" name="otp" id="otp">
+    <br>
+    <input type="submit" value="Validate">
+</form>
+
+
+{% endblock %}
